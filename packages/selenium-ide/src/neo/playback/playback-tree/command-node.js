@@ -60,6 +60,10 @@ export class CommandNode {
     )
   }
 
+  isVerify() {
+    return /^verify/.test(this.command.command)
+  }
+
   execute(commandExecutor, options, targetOverride) {
     if (this._isRetryLimit()) {
       return Promise.resolve({
